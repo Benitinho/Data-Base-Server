@@ -16,7 +16,8 @@ app.get("/ping", (req, res) => {
 
 });
 app.get("/", (req, res) => {
-    res.send("http://localhost:8080/sql?sql=select * from products");
+    // res.send("http://localhost:5555/sql?sql=select * from products");
+    res.send("http://localhost:5555/sql?sql=select * from customers");
 });
 
 app.get("/sql", async (req, res) => {
@@ -27,5 +28,5 @@ app.get("/sql", async (req, res) => {
     res.send(filas.rows);
 });
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5555;
 app.listen(PORT, () => console.log(`Server is running in port ${PORT}`));
